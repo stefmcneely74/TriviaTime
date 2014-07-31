@@ -7,7 +7,7 @@ triviaApp.config(['$routeProvider',function($routeProvider){
         }).
         when('/questions/new',{
             templateUrl: 'partials/question-form.html',
-            controller: 'QuastionNewCtrl'
+            controller: 'QuestionNewCtrl'
         }).
         otherwise({
             redirectTo: '/questions'
