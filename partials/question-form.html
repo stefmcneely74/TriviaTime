@@ -1,16 +1,16 @@
 <div>
-    <form class="form-horizontal" role="search" ng-submit="persistQuestion(question)">
+    <form name="questionForm" class="form-horizontal" role="search" novalidate ng-submit="questionFrom.$valid && persistQuestion(question)">
         <div class="form-group">
             <label class="control-label">Question:</label>
-            <input type="text" class="form-control" ng-model="question.question">
+            <input type="text" class="form-control" ng-model="question.question" required>
         </div>
         <div class="form-group">
             <label class="control-label">Anwser Option 1:</label>
-            <input type="text" class="form-control" ng-model="question.option1">
+            <input type="text" class="form-control" ng-model="question.option1" required>
             <label class="control-label">Anwser Option 2:</label>
-            <input type="text" class="form-control" ng-model="question.option2">
+            <input type="text" class="form-control" ng-model="question.option2" required>
             <label class="control-label">Anwser Option 3:</label>
-            <input type="text" class="form-control" ng-model="question.option3">
+            <input type="text" class="form-control" ng-model="question.option3" required>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">
