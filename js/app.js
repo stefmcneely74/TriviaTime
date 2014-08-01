@@ -9,6 +9,10 @@ triviaApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'partials/question-form.html',
             controller: 'QuestionNewCtrl'
         }).
+        when('/questions/:questionId', {
+        templateUrl: 'partials/question-form.html',
+        controller: 'QuestionDetailCtrl'
+        }).
         otherwise({
             redirectTo: '/questions'
 
@@ -26,7 +30,7 @@ triviaApp.controller('QuestionNewCtrl', ['$scope','$firebase', '$location', func
         var firebaseUrl = "https://samtriviaapp.firebaseio.com/questions";
         $scope.questions = $firebase(new Firebase(firebaseUrl));
         $scope.questions.$add(question).then(function(ref) {
-            $location.url('/questions');
+        $location.url('/questions');
         });
     };
 }]);
